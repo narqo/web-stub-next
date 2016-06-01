@@ -1,0 +1,51 @@
+{
+  "extends": [
+    "nodules",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_$" }],
+    "react/no-deprecated": "error",
+    "react/no-did-mount-set-state": ["error", "allow-in-func"],
+    "react/no-did-update-set-state": ["error", "allow-in-func"],
+    "react/react-in-jsx-scope": "error",
+    "react/jsx-no-bind": [
+      "warn",
+      {
+        "ignoreRefs": true
+      }
+    ],
+    "react/jsx-uses-react": [
+      "error",
+      {
+        "pragma": "React"
+      }
+    ],
+    "react/jsx-uses-vars": "error",
+    "react/jsx-curly-spacing": ["error", "never"],
+    "react/jsx-handler-names": [
+      "error",
+      {
+        "eventHandlerPrefix": "on",
+        "eventHandlerPropPrefix": "on"
+      }
+    ],
+    "react/prefer-es6-class": ["error", "always"],
+    "react/prop-types": ["off"]
+  }
+}
