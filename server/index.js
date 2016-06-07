@@ -3,8 +3,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var errorMiddleware = require('./middleware/error');
-var renderMiddleware = require('./middleware/render');
 var timerMiddleware = require('./middleware/timer');
+var viewMiddleware = require('./middleware/view');
 var webpackMiddleware = require('./middleware/webpack');
 
 const server = express();
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
     server.use(webpackMiddleware());
 }
 
-server.use(renderMiddleware());
+server.use(viewMiddleware());
 server.use(errorMiddleware());
 
 const port = process.env.port || process.env.PORT;
